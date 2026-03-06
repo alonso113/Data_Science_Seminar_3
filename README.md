@@ -1,5 +1,7 @@
 # Data Science Seminar 3
 
+[![DOI](https://zenodo.org/badge/1174168680.svg)](https://doi.org/10.5281/zenodo.18885308)
+
 ## Description:
 This repository contains the result of performing practical exercises 1 and 2.
 
