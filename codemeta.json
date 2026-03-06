@@ -1,0 +1,26 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "sum-cli",
+  "description": "Adds numbers passed as command-line arguments. This repository contains the result of performing practical exercises 1 and 2 of the Data Science Seminar 3.",
+  "version": "1.0.0",
+  "dateCreated": "2026-03-06",
+  "dateModified": "2026-03-06",
+  "identifier": "https://doi.org/10.5281/zenodo.18885308",
+  "url": "https://github.com/alonso113/Data_Science_Seminar_3",
+  "codeRepository": "https://github.com/alonso113/Data_Science_Seminar_3",
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "Go",
+    "url": "https://golang.org"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Alonso",
+      "familyName": "Geesink Antón",
+      "name": "Alonso Geesink Antón"
+    }
+  ]
+}
