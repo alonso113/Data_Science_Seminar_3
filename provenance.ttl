@@ -3,102 +3,93 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
 ########################
-# Agents (people)
+# Agents
 ########################
-
-ex/Laura a prov:Person, foaf:Person ;
+ex:Laura a prov:Person, foaf:Person ;
     foaf:name "Laura" .
 
-ex/Jack a prov:Person, foaf:Person ;
+ex:Jack a prov:Person, foaf:Person ;
     foaf:name "Jack" .
 
-ex/Jill a prov:Person, foaf:Person ;
+ex:Jill a prov:Person, foaf:Person ;
     foaf:name "Jill" .
 
-ex/Peter a prov:Person, foaf:Person ;
+ex:Peter a prov:Person, foaf:Person ;
     foaf:name "Peter" .
 
-ex/Paula a prov:Person, foaf:Person ;
+ex:Paula a prov:Person, foaf:Person ;
     foaf:name "Paula" .
 
-ex/Zack a prov:Person, foaf:Person ;
+ex:Zack a prov:Person, foaf:Person ;
     foaf:name "Zack" .
 
 ########################
-# Entities (things)
+# Entities
 ########################
-
-# Survey versions as plans
-ex/survey_v1 a prov:Entity, prov:Plan ;
+ex:survey_v1 a prov:Entity, prov:Plan ;
     prov:label "Initial survey on student financial support" .
 
-ex/survey_v2 a prov:Entity, prov:Plan ;
+ex:survey_v2 a prov:Entity, prov:Plan ;
     prov:label "Revised survey on student financial support" ;
-    prov:wasDerivedFrom ex/survey_v1 .
+    prov:wasDerivedFrom ex:survey_v1 .
 
-# Data collected
-ex/data_JJ a prov:Entity ;
-    prov:label "Data collected by Jack and Jill (survey v1)" ;
-    prov:wasDerivedFrom ex/survey_v1 .
+ex:data_JJ a prov:Entity ;
+    prov:label "Data collected by Jack and Jill (survey v1)" .
 
-ex/data_PP a prov:Entity ;
-    prov:label "Data collected by Peter and Paula (survey v2)" ;
-    prov:wasDerivedFrom ex/survey_v2 .
+ex:data_PP a prov:Entity ;
+    prov:label "Data collected by Peter and Paula (survey v2)" .
 
-ex/all_data a prov:Entity ;
+ex:all_data a prov:Entity ;
     prov:label "Merged survey dataset (JJ + PP)" ;
-    prov:wasDerivedFrom ex/data_JJ, ex/data_PP .
+    prov:wasDerivedFrom ex:data_JJ, ex:data_PP .
 
-# Software and paper
-ex/stats_pkg a prov:Entity ;
+ex:stats_pkg a prov:Entity ;
     prov:label "Statistics package used for analysis" .
 
-ex/paper a prov:Entity ;
+ex:paper a prov:Entity ;
     prov:label "Published paper on student financial support survey" ;
-    prov:wasDerivedFrom ex/all_data .
+    prov:wasDerivedFrom ex:all_data .
 
 ########################
-# Activities (processes)
+# Activities
 ########################
-
-ex/design_v1 a prov:Activity ;
+ex:design_v1 a prov:Activity ;
     prov:label "Design initial survey" ;
-    prov:wasAssociatedWith ex/Laura ;
-    prov:generated ex/survey_v1 .
+    prov:wasAssociatedWith ex:Laura ;
+    prov:generated ex:survey_v1 .
 
-ex/collect_JJ a prov:Activity ;
+ex:collect_JJ a prov:Activity ;
     prov:label "Jack and Jill conduct survey and collect data" ;
-    prov:wasAssociatedWith ex/Jack, ex/Jill ;
-    prov:used ex/survey_v1 ;
-    prov:generated ex/data_JJ ;
-    prov:hadPlan ex/survey_v1 .
+    prov:wasAssociatedWith ex:Jack, ex:Jill ;
+    prov:used ex:survey_v1 ;
+    prov:generated ex:data_JJ .
 
-ex/revise_survey a prov:Activity ;
+ex:revise_survey a prov:Activity ;
     prov:label "Laura revises the survey one year later" ;
-    prov:wasAssociatedWith ex/Laura ;
-    prov:used ex/survey_v1 ;
-    prov:generated ex/survey_v2 .
+    prov:wasAssociatedWith ex:Laura ;
+    prov:used ex:survey_v1 ;
+    prov:generated ex:survey_v2 .
 
-ex/collect_PP a prov:Activity ;
+ex:collect_PP a prov:Activity ;
     prov:label "Peter and Paula conduct revised survey and collect data" ;
-    prov:wasAssociatedWith ex/Peter, ex/Paula ;
-    prov:used ex/survey_v2 ;
-    prov:generated ex/data_PP ;
-    prov:hadPlan ex/survey_v2 .
+    prov:wasAssociatedWith ex:Peter, ex:Paula ;
+    prov:used ex:survey_v2 ;
+    prov:generated ex:data_PP .
 
-ex/merge_data a prov:Activity ;
+ex:merge_data a prov:Activity ;
     prov:label "Zack merges all survey data" ;
-    prov:wasAssociatedWith ex/Zack ;
-    prov:used ex/data_JJ, ex/data_PP ;
-    prov:generated ex/all_data .
+    prov:wasAssociatedWith ex:Zack ;
+    prov:used ex:data_JJ, ex:data_PP ;
+    prov:generated ex:all_data .
 
-ex/analyze_data a prov:Activity ;
+ex:analyze_data a prov:Activity ;
     prov:label "Zack analyzes merged data with statistics package" ;
-    prov:wasAssociatedWith ex/Zack ;
-    prov:used ex/all_data, ex/stats_pkg .
+    prov:wasAssociatedWith ex:Zack ;
+    prov:used ex:all_data, ex:stats_pkg .
 
-ex/write_paper a prov:Activity ;
+ex:write_paper a prov:Activity ;
     prov:label "Write and publish survey results paper" ;
-    prov:wasAssociatedWith ex/Laura, ex/Zack, ex/Jack, ex/Jill, ex/Peter, ex/Paula ;
-    prov:used ex/all_data ;
-    prov:generated ex/paper .
+    prov:wasAssociatedWith ex:Laura, ex:Zack ;
+    prov:used ex:all_data ;
+    prov:generated ex:paper .
+
